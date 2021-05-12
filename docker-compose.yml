@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: ./notebooks/Dockerfile
+    ports:
+      - '8888:8888'
+    volumes:
+      - .:/home/jovyan
+    environment:
+      - JUPYTER_ENABLE_LAB=True
