@@ -1,0 +1,3 @@
+{$DOMAIN_NAME:localhost} { 
+reverse_proxy /jupyter* jupyter:8888
+}

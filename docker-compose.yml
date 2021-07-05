@@ -4,9 +4,25 @@ services:
     build:
       context: .
       dockerfile: ./notebooks/Dockerfile
+    command: ["start-notebook.sh", "--NotebookApp.base_url=/jupyter"]
     ports:
-      - '8888:8888'
+      - '172.17.0.1:8888:8888'
     volumes:
       - .:/home/jovyan
     environment:
       - JUPYTER_ENABLE_LAB=True
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes: 
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    environment:
+      - DOMAIN_NAME  
+volumes:
+  caddy_data:
+  caddy_config:
