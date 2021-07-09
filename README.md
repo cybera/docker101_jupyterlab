@@ -37,3 +37,11 @@ To view the list of all the containers and get the container id of the JupyterLa
 ```
 docker ps -a
 ```
+
+### Microsoft Windows Setup
+
+If you are using Microsoft Windows, and are unable to reach your JupterLab container please make sure your firewall is allowing Docker to use your selected port.  You may also need to enter the following commands:
+
+net stop winnat
+docker start ...
+net start winnat
