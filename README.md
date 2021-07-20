@@ -24,7 +24,7 @@ docker-compose up --build -d
 
 If you have successfully built and deployed the JupyterLab image container using either of the above commands, you can access the web interface of the JupyterLab at 
 ```
-http://localhost:8888
+http://localhost:8889
 ```
 
 You might be prompted to enter the token while accessing the `http://localhost:8888`. The token can be obtained from the logs of the running JupyterLab container as follows. 
@@ -33,15 +33,27 @@ You might be prompted to enter the token while accessing the `http://localhost:8
 docker logs <container-id>
 ```
 
-To view the list of all the containers and get the container id of the JupyterLab, run 
+To view the list of all the containers and get the container id of the jupyter, run 
 ```
 docker ps -a
 ```
 
+To stop the running container, run
+```
+docker stop <container-id>
+```
+
+To remote the container, run
+```
+docker rm <container-id>
+```
+
+
 ### Microsoft Windows Setup
 
 If you are using Microsoft Windows, and are unable to reach your JupterLab container please make sure your firewall is allowing Docker to use your selected port.  You may also need to enter the following commands:
-
+```
 net stop winnat
 docker start ...
 net start winnat
+```
