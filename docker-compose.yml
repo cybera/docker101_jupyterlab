@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: ./notebooks/Dockerfile
     ports:
-      - '8889:8888'
+      - '8888:8888'
     volumes:
       - .:/home/jovyan
     environment:
