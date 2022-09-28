@@ -2,7 +2,7 @@
 FROM jupyter/datascience-notebook
 
 # Copy requirements.txt file into your image
-COPY /notebooks/requirements.txt /
+COPY /requirements.txt /
 
 # Install packages from requirements.txt file
 RUN pip install -r /requirements.txt

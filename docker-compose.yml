@@ -1,12 +1,16 @@
 version: '3.8'
 services:
-  jupyter:
+  jupyter101:
+    user: root
     build:
-      context: .
-      dockerfile: ./notebooks/Dockerfile
+      context: ./docker
+      dockerfile: Dockerfile
     ports:
-      - '8888:8888'
+      - '8777:8888'
     volumes:
-      - .:/home/jovyan
+      - /notebooks:/home/jovyan
     environment:
-      - JUPYTER_ENABLE_LAB=True
+      - JUPYTER_ENABLE_LAB=yes
+      - CHOWN_HOME=yes
+      - CHOWN_EXTRA_OPTS='-R'
+    
