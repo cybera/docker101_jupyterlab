@@ -12,5 +12,5 @@ services:
     environment:
       - JUPYTER_ENABLE_LAB=yes
       - CHOWN_HOME=yes
-      - CHOWN_EXTRA_OPTS='-R'
+      - CHOWN_HOME_OPTS=-R
     
