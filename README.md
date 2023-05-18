@@ -9,6 +9,7 @@ This repo is part of the introductory workshop on [Docker][docker] focusing spec
 3. [Need for Containerization](#3)
 4. [Benefits for Data Science Enthusiasts](#4)
 5. [Build Jupyter Lab Container](#5)
+6. [Build GPU enabled Jupyter Lab Container](#6)
 
 <a id="1"></a>
 ## 1. Introduction
@@ -123,6 +124,18 @@ If you are using Microsoft Windows, and are unable to reach your JupterLab conta
 net stop winnat
 docker start ...
 net start winnat
+```
+<a id="6"></a>
+### 5. Build GPU enabled Jupyter Lab Container
+[This medium article](https://cschranz.medium.com/set-up-your-own-gpu-based-jupyterlab-e0d45fcacf43) describes how to set up our own customized GPU-based Jupyter easily using docker. Please use this to configure your GPU instance. 
+
+After following the above steps in the article,  from the terminal run: 
+```
+docker compose --profile gpu up -d
+```
+If you have successfully built and deployed the GPU JupyterLab image container using the above command, you can access the web interface of the JupyterLab, after relevant port forwarding, at 
+```
+http://localhost:8778
 ```
 
 [adsl]:https://www.cybera.ca/adsl/
